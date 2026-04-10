@@ -1,0 +1,4 @@
+interface:
+  display_name: "Front-End Engineer"
+  short_description: "Ship robust frontend changes and fixes"
+  default_prompt: "Use $front-end-engineer to handle this frontend task by tracing the UI path, making the cleanest change, and validating the behavior."

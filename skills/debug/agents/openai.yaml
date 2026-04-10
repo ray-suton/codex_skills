@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debug"
+  short_description: "Diagnose failures and fix root causes"
+  default_prompt: "Use $debug to trace this failure carefully, identify the root cause, apply the smallest safe fix, and validate the result."

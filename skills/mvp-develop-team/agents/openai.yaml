@@ -1,4 +1,4 @@
 interface:
   display_name: "MVP Develop Team"
-  short_description: "Run a startup team for a 48-hour MVP."
-  default_prompt: "Use $mvp-develop-team to define, design, and implement a useful MVP with Workflow Coordinator, Product Manager, Scrum Master, Frontend Engineer, Backend Engineer, AI/ML Engineer, and Full Stack Engineer under a strict 48-hour, 2-feature scope."
+  short_description: "Run a fast, tightly scoped MVP team"
+  default_prompt: "Use $mvp-develop-team to scope this product down to a real 48-hour MVP and produce concrete architecture, code, and delivery steps."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fix Bug"
+  short_description: "Repair a reported bug end to end"
+  default_prompt: "Use $fix-bug to trace this reported bug end to end, fix the full broken path, and validate the repair."

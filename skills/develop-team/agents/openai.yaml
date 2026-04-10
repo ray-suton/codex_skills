@@ -1,4 +1,4 @@
 interface:
   display_name: "Develop Team"
-  short_description: "Run a broad end-to-end AI dev team."
-  default_prompt: "Use $develop-team to coordinate PM, Scrum, design, backend, frontend, integration, QA, and workflow monitoring for this software task. If the work is a strict 48-hour MVP with at most 2 core features, use $mvp-develop-team instead."
+  short_description: "Run coordinated end-to-end product delivery"
+  default_prompt: "Use $develop-team to run this product or feature as a coordinated team with explicit roles, implementation, integration, QA, and readiness output."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Researcher"
+  short_description: "Analyze ML problems with research rigor"
+  default_prompt: "Use $researcher to analyze this ML problem with research-grade reasoning about data, models, optimization, evaluation, and failure modes."

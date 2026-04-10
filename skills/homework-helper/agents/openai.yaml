@@ -1,4 +1,4 @@
 interface:
   display_name: "Homework Helper"
-  short_description: "Infer repo tasks, delegate cleanly, and produce submission-ready output."
-  default_prompt: "Use $homework-helper to scan the current repository, infer the most likely assignment or project task from workspace evidence, coordinate the right agent roles, complete the work, validate it, and return the 9-section report with a polished final report."
+  short_description: "Infer repo tasks and complete them cleanly"
+  default_prompt: "Use $homework-helper to infer the most likely repository task from local evidence, complete it end to end, and return a submission-ready report."

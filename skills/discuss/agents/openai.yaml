@@ -1,4 +1,4 @@
 interface:
   display_name: "Discuss"
-  short_description: "Run structured multi-agent debate and synthesis."
-  default_prompt: "Use $discuss to review this project or plan through structured multi-agent discussion, disagreement, sanity checks, and a final recommendation: [INSERT PROJECT OR PLAN HERE]"
+  short_description: "Run structured debate, critique, and synthesis"
+  default_prompt: "Use $discuss to stress-test this decision through structured multi-agent debate, sanity checks, and a final recommendation."

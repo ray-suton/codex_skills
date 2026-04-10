@@ -1,108 +1,77 @@
 ---
 name: debug
-description: High-confidence software debugging skill for real-world codebases across frontend, backend, APIs, databases, algorithms, performance, architecture, and production reliability. Use when the user wants systematic debugging, root cause analysis, minimal safe fixes, multi-file issue tracing, regression-aware validation, or patch-style bug resolution in an existing codebase.
+description: Diagnose and repair hard software failures with disciplined root-cause analysis. Use when the user reports a bug, regression, flaky behavior, runtime error, bad output, broken integration, or unexplained failure in a real codebase and wants careful tracing, minimal safe fixes, and evidence-backed validation.
 ---
 
 # Debug
 
-## Overview
+Treat debugging as fault isolation, not guesswork.
 
-Operate as a senior software engineer debugging a live codebase under production pressure.
+## Mission
 
-Optimize for correct diagnosis first, then the smallest safe fix. Build a mental model before changing code. Do not guess, and do not apply surface-level patches without tracing the underlying cause.
+Build the execution model first, then prove the failure path, then apply the smallest fix that breaks the causal chain.
 
 ## Workflow
 
-### 1. Understand The System
+1. Frame the failure precisely.
+- State the user-visible symptom.
+- State the expected behavior.
+- Note known inputs, environment assumptions, and missing evidence.
 
-- Read the relevant files and trace the execution path.
-- Identify how components interact: control flow, data flow, state, dependencies, APIs, and persistence.
-- Form a concrete mental model before proposing changes.
+2. Read the real execution path.
+- Read the entry point, key callers, callees, contracts, and state transitions.
+- Follow data flow across boundaries such as UI, API, services, jobs, caches, and persistence.
+- Stop only when the causal path is understood end to end.
 
-### 2. Reproduce The Issue
+3. Reproduce or narrow.
+- Prefer failing tests, logs, traces, or direct runtime checks.
+- If exact reproduction is not possible, narrow the failure envelope with concrete evidence.
+- Separate facts from inferences.
 
-- Locate where the bug actually manifests: failing tests, logs, runtime behavior, exceptions, or incorrect output.
-- Identify the exact trigger conditions, environment assumptions, and edge cases.
-- If direct reproduction is not possible, narrow the failure envelope with evidence instead of speculating.
+4. Identify root cause.
+- Test plausible hypotheses against the code and observed behavior.
+- Distinguish the first visible break from the underlying defect.
+- Reject symptom patches unless containment is explicitly required.
 
-### 3. Root Cause Analysis
+5. Implement the smallest correct fix.
+- Preserve intended behavior everywhere else.
+- Match local architecture and style.
+- Avoid broad rewrites unless structure is the confirmed cause.
 
-- Consider multiple plausible hypotheses.
-- Validate each hypothesis against the code and observed behavior.
-- Trace the issue to the underlying cause: logic errors, state bugs, async sequencing, stale caches, incorrect assumptions, API misuse, type mismatch, race conditions, configuration drift, or data inconsistencies.
-- Reject fixes that only hide symptoms unless containment is explicitly required.
+6. Validate.
+- Run focused checks first, then broader checks if justified.
+- Verify adjacent edge cases and likely regressions.
+- Add or recommend regression coverage when useful.
 
-### 4. Propose And Implement The Fix
+## Guardrails
 
-- Implement the minimal correct fix.
-- Preserve existing behavior except where it is clearly wrong.
-- Match the existing architecture, abstractions, and coding style.
-- Avoid broad rewrites unless the structure itself is the confirmed cause.
+- Do not guess.
+- Do not stop at the first suspicious line.
+- Do not hide uncertainty.
+- Do not fix unrelated problems.
+- Prefer maintainable fixes over clever fixes.
 
-### 5. Validate
+## Deliverable
 
-- Run targeted tests first, then broader checks when justified.
-- Add or suggest regression coverage for the confirmed bug.
-- Check adjacent failure modes and obvious edge cases.
+Use this structure unless the user overrides it:
 
-### 6. Improve Carefully
+## Summary
+State the failure narrowly.
 
-- Call out related issues, technical debt, or robustness gaps if they are close to the bug.
-- Do not fix unrelated problems unless they are critical to correctness or block validation.
+## Root Cause
+Explain the actual defect and why it produced the symptom.
 
-## Operating Rules
+## Files / Path
+List the relevant files and execution path.
 
-- Do not guess. Separate confirmed facts from assumptions.
-- Do not rewrite large areas of code without necessity.
-- Prefer simple, maintainable fixes over clever ones.
-- Distinguish root cause from downstream effects.
-- When evidence is incomplete, say what is known, what is inferred, and how to verify the inference.
+## Fix
+Describe the concrete code changes.
 
-## Response Contract
+## Why It Works
+Tie the fix directly to the root cause.
 
-Use this structure by default unless the user asks for something else:
+## Risks
+State remaining assumptions, regressions, or follow-up checks.
 
-### 1. Summary Of The Issue
-
-State the user-visible failure clearly and narrowly.
-
-### 2. Root Cause Explanation
-
-Explain the actual cause, not just the symptom.
-
-### 3. Files/Lines Involved
-
-Point to the relevant files and execution path.
-
-### 4. Proposed Fix
-
-Show the fix in diff-style or patch-style terms and describe the behavioral change.
-
-### 5. Why This Fix Works
-
-Tie the fix directly back to the root cause.
-
-### 6. Potential Side Effects / Risks
-
-State regressions, assumptions, or areas that need verification.
-
-### 7. Suggested Tests
-
-List focused regression tests and edge cases.
-
-## Default Mindset
-
-Think like:
-
-- a senior engineer reading unfamiliar code quickly but carefully
-- an incident responder isolating the real fault under pressure
-- a reviewer who must defend the fix as safe and sufficient
-
-## Default Invocation Template
-
-Use this framing when the user simply wants the skill applied:
-
-Debug the following issue in the codebase with high confidence. First build a mental model, then reproduce or narrow the failure, identify the root cause, implement the minimal correct fix, and validate it. Structure the response as:
-Summary of the issue, Root cause explanation, Files/lines involved, Proposed fix, Why this fix works, Potential side effects / risks, and Suggested tests.
-
-[INSERT BUG REPORT, ERROR, OR FAILURE DESCRIPTION HERE]
+## Validation
+List tests run, manual checks performed, and recommended regression tests.

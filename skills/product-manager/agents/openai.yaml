@@ -1,4 +1,4 @@
 interface:
   display_name: "Product Manager"
-  short_description: "Turn MVP ideas into product plans."
-  default_prompt: "Use $product-manager to turn this MVP idea into a shippable, production-ready product plan: [INSERT MVP IDEA HERE]"
+  short_description: "Turn product ideas into launchable plans"
+  default_prompt: "Use $product-manager to turn this rough product idea into a tight, shippable plan with scope, risks, GTM, and success metrics."
