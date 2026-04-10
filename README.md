@@ -37,8 +37,9 @@
     product-manager/
     researcher/
     simplify/
+  ```
 
-  Each skill folder contains:
+  # Each skill folder contains:
 
   - SKILL.md — Skill trigger description and operating instructions
   - agents/openai.yaml — UI-facing metadata such as display name and default
