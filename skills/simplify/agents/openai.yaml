@@ -1,0 +1,4 @@
+interface:
+  display_name: "Simplify"
+  short_description: "Reduce code complexity safely"
+  default_prompt: "Use $simplify to identify high-value complexity hotspots, make small behavior-preserving refactors, add tests when needed, and verify with relevant checks."
